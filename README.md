@@ -1,16 +1,40 @@
-## Hi there 👋
+## Olá, Bem vindo ao meu perfil! 👋
 
-<!--
-**ofxzinho/ofxzinho** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🔭 Atualmente estudando Engenharia de Software  
+🌱 Estou aprendendo programação, especialmente em C  
+📫 Contate-me pelo e-mail: [fabioruanmoreiradealencar@gmail.com](mailto:fabioruanmoreiradealencar@gmail.com)  
 
-Here are some ideas to get you started:
+<br>
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 📊 Minhas Estatísticas no GitHub
+<div align="center">
+  <a href="https://github.com/ofxzinho">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ofxzinho&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ofxzinho&layout=compact&langs_count=16&theme=dark"/>
+  </a>
+</div>
+
+<br>
+
+### 💻 Linguagens que estou aprendendo
+<div align="center">
+  <img align="center" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
+  <img align="center" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+</div>
+
+<br>
+
+### 🌐 Redes Sociais
+<div align="center">
+  <a href="https://www.linkedin.com/in/fábio-ruan-b84306365" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  
+  <a href="mailto:fabioruanmoreiradealencar@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/-Gmail-%23D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+  </a>
+  
+  <a href="https://discord.com/users/o_fxx" target="_blank">
+    <img src="https://img.shields.io/badge/Discord-%235865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+  </a>
+</div>
