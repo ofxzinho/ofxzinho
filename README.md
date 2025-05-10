@@ -38,3 +38,6 @@
     <img src="https://img.shields.io/badge/Discord-%235865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
   </a>
 </div>
+<div align="center">
+  <img src="https://i.pinimg.com/originals/c6/e2/2c/c6e22c1062dae86c08c85d64b0735fd9.gif" alt="Pacman animation" width="300"/>
+</div>
