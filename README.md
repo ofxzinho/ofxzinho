@@ -1,67 +1,56 @@
 <div align="center">
-  <h1>Fábio Ruan</h1>
-  <p>Estudante de Engenharia de Software | UniCEUB</p>
+<img src="https://www.google.com/search?q=https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2RzNnBqOW5qNXNodjZ1cHRxM3hnYjB5c3E3eGFjcGl0a256Z2RmaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/YknfD2oDua7i5HePUp/giphy.gif" width="100px">
+<h1>Fábio Ruan</h1>
+<p>Estudante de Engenharia de Software | UniCEUB</p>
 </div>
 
----
-
-### 👨‍💻 Sobre Mim
+👨‍💻 Sobre Mim
 <p>
-  Sou um estudante iniciante em Engenharia de Software, atualmente no primeiro semestre na UniCEUB. Tenho interesse em linguagens como C e Python, e comecei a explorar desenvolvimento web. Estou sempre buscando aprender mais através de projetos práticos e materiais online.
+Sou um estudante de Engenharia de Software no UniCEUB, focado em resolver problemas através do código. Tenho grande interesse em linguagens como C, Python e estou aprofundando meus estudos em Java, com foco em desenvolvimento backend. Estou sempre buscando aprender e aplicar meus conhecimentos em projetos práticos.
 </p>
 
----
-
-### 🚀 Habilidades
-- Lógica de Programação (em C e Python)
-- HTML e CSS básico
-- Conhecimentos iniciais em Banco de Dados
-- Trabalho em grupo e desenvolvimento de projetos acadêmicos
-
----
-
-### 📂 Projetos em Destaque
-
-<table>
-  <tr>
-    <td width="50%">
-      <h3>Calculadora em Python</h3>
-      <p>Uma calculadora simples com operações básicas desenvolvida para praticar lógica de programação e estrutura condicional.</p>
-    </td>
-    <td width="50%">
-      <h3>Site Pessoal</h3>
-      <p>Primeiro site desenvolvido com HTML e CSS. Projeto usado para treinar marcação, estrutura de página e estilo visual.</p>
-    </td>
-  </tr>
-  <tr>
-    <td colspan="2">
-      <h3>Software Vitalux</h3>
-      <p>Projeto em grupo desenvolvido em sala de aula com foco em melhorar o sistema de triagem de um pronto-socorro. O objetivo era criar um sistema mais eficiente para organizar o atendimento e priorização de pacientes.</p>
-    </td>
-  </tr>
-</table>
-
----
-
-### 📫 Contato
-
+🚀 Habilidades
 <p align="center">
-  <a href="mailto:fabioruanmoreiradealencar@gmail.com">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
-  </a>
-  &nbsp;
-  <a href="https://linkedin.com/in/fabio-ruan-b84306365" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/C-00599C%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="C">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-3776AB%3Fstyle%3Dfor-the-badge%26logo%3Dpython%26logoColor%3Dwhite" alt="Python">
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/GIT-E44C30%3Fstyle%3Dfor-the-badge%26logo%3Dgit%26logoColor%3Dwhite" alt="Git">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/GitHub-100000%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite" alt="GitHub">
 </p>
 
----
-
-### ✨ Minhas Estatísticas no GitHub
-
+📂 Projetos em Destaque
 <div align="center">
-  <a href="https://github.com/ofxzinho">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ofxzinho&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ofxzinho&layout=compact&langs_count=7&theme=dracula"/>
-  </a>
+<table>
+<tr>
+<td width="100%">
+<h3>Software Vitalux</h3>
+<p>Projeto em grupo desenvolvido em sala de aula com foco em melhorar o sistema de triagem de um pronto-socorro, criando um sistema mais eficiente para organizar o atendimento e priorização de pacientes.</p>
+</td>
+</tr>
+<tr>
+<td width="100%">
+<h3>Site Pessoal</h3>
+<p>Primeiro projeto para aprender os fundamentos de HTML e CSS, focando em marcação, estrutura de página e estilo visual.</p>
+</td>
+</tr>
+</table>
+</div>
+
+📫 Contato
+<p align="center">
+<a href="mailto:fabioruanmoreiradealencar@gmail.com">
+<img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+</a>
+&nbsp;
+<a href="https://linkedin.com/in/fabio-ruan-b84306365" target="_blank">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
+</p>
+
+✨ Minhas Estatísticas no GitHub
+<div align="center">
+<a href="https://github.com/ofxzinho">
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=ofxzinho&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ofxzinho&layout=compact&langs_count=7&theme=dracula"/>
+</a>
 </div>
