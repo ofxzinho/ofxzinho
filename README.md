@@ -1,189 +1,67 @@
-<!DOCTYPE html>
-
-<html lang="pt-BR">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfólio de Fábio Ruan</title>
-
-    <style>
-
-        body {
-
-            font-family: 'Arial', sans-serif;
-
-            line-height: 1.6;
-
-            max-width: 800px;
-
-            margin: 0 auto;
-
-            padding: 20px;
-
-            background: #f9f9f9;
-
-            color: #333;
-
-        }
-
-        header {
-
-            text-align: center;
-
-            margin-bottom: 40px;
-
-        }
-
-        h1 {
-
-            color: #2c3e50;
-
-        }
-
-        .projeto {
-
-            background: white;
-
-            padding: 15px;
-
-            margin-bottom: 20px;
-
-            border-radius: 8px;
-
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-
-        }
-
-        a {
-
-            color: #3498db;
-
-            text-decoration: none;
-
-        }
-
-        footer {
-
-            text-align: center;
-
-            margin-top: 40px;
-
-            color: #7f8c8d;
-
-        }
-
-    </style>
-
-</head>
-
-<body>
-
-    <header>
-
-        <h1>Fábio Ruan</h1>
-
-        <p>Estudante de Engenharia de Software | UniCEUB</p>
-
-    </header>
-
-
-
-    <section id="sobre">
-
-        <h2>Sobre Mim</h2>
-
-        <p>Sou um estudante iniciante em Engenharia de Software, atualmente no primeiro semestre na UniCEUB. Tenho interesse em linguagens como C e Python, e comecei a explorar desenvolvimento web. Estou sempre buscando aprender mais através de projetos práticos e materiais online.</p>
-
-    </section>
-
-
-
-    <section id="habilidades">
-
-        <h2>Habilidades</h2>
-
-        <ul>
-
-            <li>Lógica de Programação (em C e Python)</li>
-
-            <li>HTML e CSS básico</li>
-
-            <li>Conhecimentos iniciais em Banco de Dados</li>
-
-            <li>Trabalho em grupo e desenvolvimento de projetos acadêmicos</li>
-
-        </ul>
-
-    </section>
-
-
-
-    <section id="projetos">
-
-        <h2>Projetos</h2>
-
-
-
-        <div class="projeto">
-
-            <h3>Calculadora em Python</h3>
-
-            <p>Uma calculadora simples com operações básicas desenvolvida para praticar lógica de programação e estrutura condicional.</p>
-
-        </div>
-
-
-
-        <div class="projeto">
-
-            <h3>Site Pessoal</h3>
-
-            <p>Primeiro site desenvolvido com HTML e CSS. Projeto usado para treinar marcação, estrutura de página e estilo visual.</p>
-
-        </div>
-
-
-
-        <div class="projeto">
-
-            <h3>Software Vitalux</h3>
-
-            <p>Projeto em grupo desenvolvido em sala de aula com foco em melhorar o sistema de triagem de um pronto-socorro. O objetivo era criar um sistema mais eficiente para organizar o atendimento e priorização de pacientes.</p>
-
-        </div>
-
-    </section>
-
-
-
-    <section id="contato">
-
-        <h2>Contato</h2>
-
-        <p>📧 Email: <a href="mailto:fabioruanmoreiradealencar@gmail.com">fabioruanmoreiradealencar@gmail.com</a></p>
-
-        <p>
-
-            <a href="https://linkedin.com/in/fábio-ruan-b84306365" target="_blank">LinkedIn</a> |
-
-            <a href="https://github.com/ofxzinho" target="_blank">GitHub</a>
-
-        </p>
-
-    </section>
-
-
-
-    <footer>
-
-        <p>© 2025 Fábio Ruan. Todos os direitos reservados.</p>
-
-    </footer>
-
-</body>
-
-</html>
+<div align="center">
+  <h1>Fábio Ruan</h1>
+  <p>Estudante de Engenharia de Software | UniCEUB</p>
+</div>
+
+---
+
+### 👨‍💻 Sobre Mim
+<p>
+  Sou um estudante iniciante em Engenharia de Software, atualmente no primeiro semestre na UniCEUB. Tenho interesse em linguagens como C e Python, e comecei a explorar desenvolvimento web. Estou sempre buscando aprender mais através de projetos práticos e materiais online.
+</p>
+
+---
+
+### 🚀 Habilidades
+- Lógica de Programação (em C e Python)
+- HTML e CSS básico
+- Conhecimentos iniciais em Banco de Dados
+- Trabalho em grupo e desenvolvimento de projetos acadêmicos
+
+---
+
+### 📂 Projetos em Destaque
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>Calculadora em Python</h3>
+      <p>Uma calculadora simples com operações básicas desenvolvida para praticar lógica de programação e estrutura condicional.</p>
+    </td>
+    <td width="50%">
+      <h3>Site Pessoal</h3>
+      <p>Primeiro site desenvolvido com HTML e CSS. Projeto usado para treinar marcação, estrutura de página e estilo visual.</p>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <h3>Software Vitalux</h3>
+      <p>Projeto em grupo desenvolvido em sala de aula com foco em melhorar o sistema de triagem de um pronto-socorro. O objetivo era criar um sistema mais eficiente para organizar o atendimento e priorização de pacientes.</p>
+    </td>
+  </tr>
+</table>
+
+---
+
+### 📫 Contato
+
+<p align="center">
+  <a href="mailto:fabioruanmoreiradealencar@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email">
+  </a>
+  &nbsp;
+  <a href="https://linkedin.com/in/fabio-ruan-b84306365" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+</p>
+
+---
+
+### ✨ Minhas Estatísticas no GitHub
+
+<div align="center">
+  <a href="https://github.com/ofxzinho">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=ofxzinho&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=ofxzinho&layout=compact&langs_count=7&theme=dracula"/>
+  </a>
+</div>
