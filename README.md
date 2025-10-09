@@ -11,11 +11,7 @@ Sou um estudante de Engenharia de Software no UniCEUB, focado em resolver proble
 
 🚀 Habilidades
 <p align="center">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/C-00599C%3Fstyle%3Dfor-the-badge%26logo%3Dc%26logoColor%3Dwhite" alt="C">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-3776AB%3Fstyle%3Dfor-the-badge%26logo%3Dpython%26logoColor%3Dwhite" alt="Python">
 <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/GIT-E44C30%3Fstyle%3Dfor-the-badge%26logo%3Dgit%26logoColor%3Dwhite" alt="Git">
-<img src="https://www.google.com/search?q=https://img.shields.io/badge/GitHub-100000%3Fstyle%3Dfor-the-badge%26logo%3Dgithub%26logoColor%3Dwhite" alt="GitHub">
 </p>
 
 📂 Projetos em Destaque
