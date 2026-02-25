@@ -14,18 +14,6 @@ Sou um estudante de Engenharia de Software no UniCEUB, focado em resolver proble
 <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java">
 </p>
 
-📂 Projetos em Destaque
-<div align="center">
-<table>
-<tr>
-<td width="100%">
-<h3>Site Pessoal</h3>
-<p>Primeiro projeto para aprender os fundamentos de HTML e CSS, focando em marcação, estrutura de página e estilo visual.</p>
-</td>
-</tr>
-</table>
-</div>
-
 📫 Contato
 <p align="center">
 <a href="mailto:fabioruanmoreiradealencar@gmail.com">
