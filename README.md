@@ -6,7 +6,7 @@
 
 👨‍💻 Sobre Mim
 <p>
-Sou um estudante de Engenharia de Software no UniCEUB, focado em resolver problemas através do código. Tenho grande interesse em linguagens como C, Python e estou aprofundando meus estudos em Java, com foco em desenvolvimento backend. Estou sempre buscando aprender e aplicar meus conhecimentos em projetos práticos.
+Sou um estudante de Engenharia de Software no UniCEUB, focado em resolver problemas através do código. Tenho grande interesse em linguagens como Java, Python e estou aprofundando meus estudos em Java, com foco em desenvolvimento backend. Estou sempre buscando aprender e aplicar meus conhecimentos em projetos práticos.
 </p>
 
 🚀 Habilidades
