@@ -19,12 +19,6 @@ Sou um estudante de Engenharia de Software no UniCEUB, focado em resolver proble
 <table>
 <tr>
 <td width="100%">
-<h3>Software Vitalux</h3>
-<p>Projeto em grupo desenvolvido em sala de aula com foco em melhorar o sistema de triagem de um pronto-socorro, criando um sistema mais eficiente para organizar o atendimento e priorização de pacientes.</p>
-</td>
-</tr>
-<tr>
-<td width="100%">
 <h3>Site Pessoal</h3>
 <p>Primeiro projeto para aprender os fundamentos de HTML e CSS, focando em marcação, estrutura de página e estilo visual.</p>
 </td>
