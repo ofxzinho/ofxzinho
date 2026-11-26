@@ -46,7 +46,5 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ofxzinho/ofxzinho/975b22074cdff25fad3913492d29c2d0fee1eac0/snake.svg" width="100%" alt="Cobrinha vermelha percorrendo o gráfico de contribuições do ofxzinho">
+  <img src="https://raw.githubusercontent.com/ofxzinho/ofxzinho/main/snake.svg?style=first-red-live" width="100%" alt="Cobrinha vermelha percorrendo o gráfico de contribuições do ofxzinho">
 </p>
-
-[Ver a cobrinha com as contribuições atualizadas](https://raw.githubusercontent.com/ofxzinho/ofxzinho/main/snake.svg)
