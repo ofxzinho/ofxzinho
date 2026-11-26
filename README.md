@@ -48,3 +48,7 @@
 <p align="center">
   <img src="https://raw.githubusercontent.com/ofxzinho/ofxzinho/refs/heads/main/snake.svg" width="100%" alt="Cobrinha vermelha percorrendo o gráfico de contribuições do ofxzinho">
 </p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/ofxzinho/ofxzinho/refs/heads/main/contributions-3d.svg" width="100%" alt="Gráfico 3D das contribuições de ofxzinho no GitHub">
+</p>
