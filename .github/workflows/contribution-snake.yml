@@ -11,11 +11,15 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
       - uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
         with:
           github_user_name: ofxzinho
-          outputs: |
-            snake.svg?color_snake=#ff3d58&color_dots=#262027,#541623,#88182c,#c11f39,#ef5267
+          outputs: contribution-grid.svg
+      - name: Render growing snake
+        run: node scripts/grow-snake.mjs contribution-grid.svg snake.svg
       - name: Publish updated SVG
         env:
           GH_TOKEN: ${{ github.token }}
@@ -26,4 +30,4 @@ jobs:
             echo 'Contribution snake is already up to date.'
             exit 0
           fi
-          gh api --method PUT "$path" -f message='Refresh contribution snake' -f sha="$sha" -f content="$(base64 -w0 snake.svg)" --jq .commit.sha
+          jq -n --arg sha "$sha" --rawfile content <(base64 -w0 snake.svg)             '{message: "Refresh contribution snake", sha: $sha, content: $content}'             | gh api --method PUT "$path" --input - --jq .commit.sha
