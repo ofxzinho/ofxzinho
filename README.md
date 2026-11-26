@@ -16,19 +16,28 @@
   <a href="mailto:fabioruanmoreiradealencar@gmail.com"><img src="https://img.shields.io/badge/E--mail-17171A?style=for-the-badge&amp;logo=gmail&amp;logoColor=FF536B" alt="E-mail"></a>
 </p>
 
-### Linguagens e tecnologias
+### Stack principal
 
-![Java](https://img.shields.io/badge/Java-141416?style=flat-square&logo=openjdk&logoColor=FF536B)
-![Python](https://img.shields.io/badge/Python-141416?style=flat-square&logo=python&logoColor=FF536B)
-![Spring Boot](https://img.shields.io/badge/Spring%20Boot-141416?style=flat-square&logo=springboot&logoColor=FF536B)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-141416?style=flat-square&logo=postgresql&logoColor=FF536B)
+![Java 17](https://img.shields.io/badge/Java%2017-A6112A?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-A6112A?style=for-the-badge&logo=springboot&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-A6112A?style=for-the-badge&logo=postgresql&logoColor=white)
 
-### Ferramentas
+![Spring Data JPA](https://img.shields.io/badge/Spring%20Data%20JPA-141416?style=flat-square&logo=spring&logoColor=FF536B)
 
+### Testes e ferramentas
+
+![JUnit 5](https://img.shields.io/badge/JUnit%205-141416?style=flat-square&logo=junit5&logoColor=FF536B)
+![Maven](https://img.shields.io/badge/Maven-141416?style=flat-square&logo=apachemaven&logoColor=FF536B)
+![Docker](https://img.shields.io/badge/Docker-141416?style=flat-square&logo=docker&logoColor=FF536B)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-141416?style=flat-square&logo=githubactions&logoColor=FF536B)
 ![Git](https://img.shields.io/badge/Git-141416?style=flat-square&logo=git&logoColor=FF536B)
-![GitHub](https://img.shields.io/badge/GitHub-141416?style=flat-square&logo=github&logoColor=FF536B)
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-141416?style=flat-square&logo=intellijidea&logoColor=FF536B)
-![VS Code](https://img.shields.io/badge/VS%20Code-141416?style=flat-square)
+
+### Experiência complementar
+
+![JavaScript](https://img.shields.io/badge/JavaScript-141416?style=flat-square&logo=javascript&logoColor=FF536B)
+![Node.js](https://img.shields.io/badge/Node.js-141416?style=flat-square&logo=nodedotjs&logoColor=FF536B)
+![Express](https://img.shields.io/badge/Express-141416?style=flat-square&logo=express&logoColor=FF536B)
+![MySQL](https://img.shields.io/badge/MySQL-141416?style=flat-square&logo=mysql&logoColor=FF536B)
 
 ### Atividade no GitHub
 
