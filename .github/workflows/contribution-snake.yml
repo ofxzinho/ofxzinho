@@ -14,8 +14,14 @@ jobs:
       - uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b
         with:
           github_user_name: ofxzinho
-          outputs: |
-            snake.svg?color_snake=#ff3d58&color_dots=#262027,#541623,#88182c,#c11f39,#ef5267
+          outputs: contribution-grid.svg
+      - name: Refresh grid without changing movement
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl --fail --silent --show-error --location 'https://raw.githubusercontent.com/ofxzinho/ofxzinho/975b22074cdff25fad3913492d29c2d0fee1eac0/snake.svg' -o original.svg
+          gh api "repos/$GITHUB_REPOSITORY/contents/scripts/refresh-snake.mjs?ref=$GITHUB_SHA" -H 'Accept: application/vnd.github.raw+json' > refresh-snake.mjs
+          node refresh-snake.mjs original.svg contribution-grid.svg snake.svg
       - name: Publish updated SVG
         env:
           GH_TOKEN: ${{ github.token }}
