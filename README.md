@@ -35,3 +35,7 @@
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=ofxzinho&amp;background=101014&amp;border=52202A&amp;stroke=52202A&amp;ring=F5485E&amp;fire=FF5269&amp;currStreakNum=FFFFFF&amp;sideNums=FFFFFF&amp;currStreakLabel=FF7485&amp;sideLabels=F0E8EC&amp;dates=CBB9C1&amp;locale=pt_BR" width="495" alt="Contribuições e sequências de atividade de ofxzinho no GitHub">
 </p>
+
+<p align="center">
+  <img src="snake.svg" width="100%" alt="Cobrinha vermelha percorrendo o gráfico de contribuições do ofxzinho">
+</p>
