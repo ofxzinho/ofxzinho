@@ -1,0 +1,40 @@
+name: Red Space Shooter
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '40 */6 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: red-space-shooter
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Install animation tools
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install 'gh-space-shooter==2.0.5' 'Pillow==13.0.0'
+      - name: Generate contribution animation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: .venv/bin/gh-space-shooter "$GITHUB_REPOSITORY_OWNER" -o original.webp -s column
+      - name: Apply black and red palette
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/contents/scripts/recolor-shooter.py?ref=$GITHUB_SHA" -H 'Accept: application/vnd.github.raw+json' > recolor-shooter.py
+          .venv/bin/python recolor-shooter.py original.webp space-shooter-red.webp
+      - name: Publish animation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          path="repos/$GITHUB_REPOSITORY/contents/space-shooter-red.webp"
+          sha=$(gh api "$path" --jq .sha)
+          if [ "$sha" = "$(git hash-object space-shooter-red.webp)" ]; then
+            exit 0
+          fi
+          base64 -w0 space-shooter-red.webp > animation.b64
+          jq -n --arg sha "$sha" --rawfile content animation.b64 '{message: "Refresh red Space Shooter", sha: $sha, content: $content}' > update.json
+          gh api --method PUT "$path" --input update.json --jq .commit.sha
