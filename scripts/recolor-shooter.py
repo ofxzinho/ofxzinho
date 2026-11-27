@@ -3,42 +3,107 @@ import sys
 
 from PIL import Image, ImageOps
 
-input_path, output_path = sys.argv[1:]
-background_color = "#101014"
-fade_frames = 10
-fade_frame_ms = 40
+INPUT_PATH, OUTPUT_PATH = sys.argv[1:]
+BACKGROUND = "#101014"
+# Geometry from the default renderer in gh-space-shooter 2.0.5.
+PADDING = 40
+CELL_PITCH = 15
+GRID_ROWS = 7
+SHIP_ROW = 10
+RETURN_FRAMES = 32
+RETURN_FRAME_MS = 40
 
-with Image.open(input_path) as image:
+
+def recolor(frame):
+    return ImageOps.colorize(
+        ImageOps.grayscale(frame),
+        black=BACKGROUND, mid="#a6112a", white="#ffe9ed",
+        blackpoint=24, midpoint=125,
+    )
+
+
+def ship_sprite(frame):
+    y = PADDING + SHIP_ROW * CELL_PITCH
+    band = frame.crop((0, y - 1, frame.width, y + CELL_PITCH))
+    pixels = list(band.get_flattened_data())
+    marker = Image.new("L", band.size)
+    marker.putdata([255 if b > 135 and b - r > 65 and b - g > 35 else 0
+                    for r, g, b in pixels])
+    bounds = marker.getbbox()
+    if bounds is None or bounds[2] - bounds[0] > 24:
+        raise ValueError("Could not identify the Space Shooter sprite")
+    left, top, right, bottom = bounds
+    box = (max(0, left - 2), y - 1 + top, min(frame.width, right + 2), y - 1 + bottom)
+    crop = frame.crop(box)
+    mask = Image.new("L", crop.size)
+    mask.putdata([min(255, max(0, (b - r - 12) * 2)) for r, _, b in crop.get_flattened_data()])
+    return box, recolor(crop), mask
+
+
+def without_ship(scene, other_scene, box, other_box):
+    clean = scene.copy()
+    left, top, right, bottom = box
+    if right <= other_box[0] or left >= other_box[2]:
+        patch = other_scene.crop(box)
+    else:
+        # Sample nearby sky if the two ship positions overlap.
+        offset = right - left + 4
+        offset = -offset if right + offset > scene.width else offset
+        patch = scene.crop((left + offset, top, right + offset, bottom))
+    clean.paste(patch, (left, top))
+    return clean
+
+
+def eased(value):
+    return (1 - math.cos(math.pi * max(0, min(1, value)))) / 2
+
+
+def return_flight(first, last, first_source, last_source):
+    start_box, sprite, sprite_mask = ship_sprite(first_source)
+    end_box, _, _ = ship_sprite(last_source)
+    start_sky = without_ship(first, last, start_box, end_box)
+    end_sky = without_ship(last, first, end_box, start_box)
+    weeks = (first.width - 2 * PADDING) // CELL_PITCH
+    bottom = PADDING + GRID_ROWS * CELL_PITCH
+
+    for step in range(1, RETURN_FRAMES + 1):
+        time = step / (RETURN_FRAMES + 1)
+        motion = eased(time)
+        scene = Image.blend(end_sky, start_sky, motion)
+
+        # Rebuild the board column by column. The starfield stays visible.
+        for column in range(weeks):
+            left = PADDING + column * CELL_PITCH
+            box = (left, PADDING, left + CELL_PITCH, bottom)
+            delay = 0.70 * column / max(1, weeks - 1)
+            progress = eased((time - delay) / 0.25)
+            scene.paste(Image.blend(last.crop(box), first.crop(box), progress), box[:2])
+
+        x = round(end_box[0] + (start_box[0] - end_box[0]) * motion)
+        y = round(end_box[1] + (start_box[1] - end_box[1]) * motion - 12 * math.sin(math.pi * motion))
+        scene.paste(sprite, (x, y), sprite_mask)
+        yield scene
+
+
+with Image.open(INPUT_PATH) as image:
     frames, durations = [], []
     for index in range(image.n_frames):
         image.seek(index)
         frame = image.convert("RGB")
         durations.append(image.info.get("duration", 40))
-        frames.append(ImageOps.colorize(
-            ImageOps.grayscale(frame),
-            black=background_color, mid="#a6112a", white="#ffe9ed",
-            blackpoint=24, midpoint=125,
-        ))
+        frames.append(recolor(frame))
+        if index == 0:
+            first_source = frame
+    last_source = frame
 
-background = Image.new("RGB", frames[0].size, background_color)
-
-
-def fade_in(frame):
-    return [
-        Image.blend(background, frame, (1 - math.cos(math.pi * step / fade_frames)) / 2)
-        for step in range(1, fade_frames)
-    ]
-
-
-# Put the transition across the loop boundary so it also fades in on first view.
-loop_frames = [background, *fade_in(frames[0]), *frames, *reversed(fade_in(frames[-1]))]
-loop_durations = [fade_frame_ms] * fade_frames + durations + [fade_frame_ms] * (fade_frames - 1)
-loop_frames[0].save(
-    output_path, save_all=True, append_images=loop_frames[1:],
-    duration=loop_durations, loop=0, quality=85, method=4,
+flight = list(return_flight(frames[0], frames[-1], first_source, last_source))
+frames[0].save(
+    OUTPUT_PATH, save_all=True, append_images=frames[1:] + flight,
+    duration=durations + [RETURN_FRAME_MS] * len(flight),
+    loop=0, quality=85, method=4,
 )
 
-with Image.open(output_path) as result:
-    assert result.is_animated and result.size == background.size
-    assert result.n_frames >= len(frames), "Unexpected animation output"
-    print(f"{result.n_frames} frames, {result.width}x{result.height}")
+with Image.open(OUTPUT_PATH) as result:
+    if not result.is_animated or result.size != frames[0].size:
+        raise ValueError("Unexpected animation output")
+    print(f"{result.n_frames} frames, {result.width}x{result.height}; {len(flight)} return frames")
