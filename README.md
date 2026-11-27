@@ -46,5 +46,5 @@
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ofxzinho/ofxzinho/refs/heads/main/snake.svg" width="100%" alt="Cobrinha vermelha percorrendo o gráfico de contribuições do ofxzinho">
+  <img src="https://raw.githubusercontent.com/ofxzinho/ofxzinho/refs/heads/main/space-shooter-red.webp" width="100%" alt="Nave vermelha em uma animação Space Shooter com as contribuições de ofxzinho">
 </p>
