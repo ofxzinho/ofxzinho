@@ -1,7 +1,7 @@
 import math
 import sys
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageOps
 
 INPUT_PATH, OUTPUT_PATH = sys.argv[1:]
 BACKGROUND = "#101014"
@@ -10,7 +10,8 @@ PADDING = 40
 CELL_PITCH = 15
 GRID_ROWS = 7
 SHIP_ROW = 10
-RETURN_FRAMES = 32
+PIXELS_PER_FRAME = 17
+REVEAL_FRAMES = 5
 RETURN_FRAME_MS = 40
 
 
@@ -66,23 +67,58 @@ def return_flight(first, last, first_source, last_source):
     weeks = (first.width - 2 * PADDING) // CELL_PITCH
     bottom = PADDING + GRID_ROWS * CELL_PITCH
 
-    for step in range(1, RETURN_FRAMES + 1):
-        time = step / (RETURN_FRAMES + 1)
-        motion = eased(time)
-        scene = Image.blend(end_sky, start_sky, motion)
+    columns = {}
+    for column in range(weeks):
+        left = PADDING + column * CELL_PITCH
+        box = (left, PADDING, left + CELL_PITCH, bottom)
+        before, after = last.crop(box), first.crop(box)
+        changed = ImageChops.difference(before, after).convert("L").histogram()
+        if sum(changed[20:]) >= 8:
+            columns[left + CELL_PITCH / 2] = (box, before, after)
 
-        # Rebuild the board column by column. The starfield stays visible.
-        for column in range(weeks):
-            left = PADDING + column * CELL_PITCH
-            box = (left, PADDING, left + CELL_PITCH, bottom)
-            delay = 0.70 * column / max(1, weeks - 1)
-            progress = eased((time - delay) / 0.25)
-            scene.paste(Image.blend(last.crop(box), first.crop(box), progress), box[:2])
+    sprite_center = (sprite.width - 1) / 2
+    destination = start_box[0] + sprite_center
+    origin = end_box[0] + sprite_center
+    waypoints = [origin, destination]
+    if columns:
+        leftmost, rightmost = min(columns), max(columns)
+        candidates = [
+            [origin, destination],
+            [origin, leftmost, destination],
+            [origin, rightmost, destination],
+            [origin, leftmost, rightmost, destination],
+            [origin, rightmost, leftmost, destination],
+        ]
+        waypoints = min(
+            (path for path in candidates if min(path) <= leftmost and max(path) >= rightmost),
+            key=lambda path: sum(abs(b - a) for a, b in zip(path, path[1:])),
+        )
 
-        x = round(end_box[0] + (start_box[0] - end_box[0]) * motion)
+    positions = [origin]
+    for a, b in zip(waypoints, waypoints[1:]):
+        if a == b:
+            continue
+        steps = max(2, math.ceil(abs(b - a) / PIXELS_PER_FRAME))
+        positions.extend(a + (b - a) * eased(step / steps) for step in range(1, steps + 1))
+    positions.extend([destination] * REVEAL_FRAMES)
+
+    passed_at = {}
+    for index, (previous, current) in enumerate(zip(positions, positions[1:]), 1):
+        motion = index / (len(positions) - 1)
+        scene = Image.blend(end_sky, start_sky, eased(motion))
+        for center, (box, before, after) in columns.items():
+            if min(previous, current) <= center <= max(previous, current):
+                passed_at.setdefault(center, index)
+            progress = (index - passed_at[center] + 1) / REVEAL_FRAMES if center in passed_at else 0
+            scene.paste(Image.blend(before, after, eased(progress)), box[:2])
+
+        x = round(current - sprite_center)
         y = round(end_box[1] + (start_box[1] - end_box[1]) * motion - 12 * math.sin(math.pi * motion))
         scene.paste(sprite, (x, y), sprite_mask)
         yield scene
+
+    if len(passed_at) != len(columns):
+        raise ValueError("The return flight did not reach every changed column")
 
 
 with Image.open(INPUT_PATH) as image:
